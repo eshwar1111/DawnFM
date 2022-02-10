@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Asap:wght@500&family=Open+Sans+Condensed:wght@700&family=Roboto:wght@700&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 56px;
+}
+h4{
+    color: rgb(186, 193, 226);
+}
+
+body{
+    height: 105vh;
+    
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    background: rgb(2,0,36);
+background: linear-gradient(0deg, rgba(2,0,36,1) 9%, rgba(9,9,121,1) 45%, rgb(17, 54, 202) 97%);
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* animation: change 3.5s infinite; */
+    
+}
+
+ @keyframes change{
+    0%{
+        background: linear-gradient(0deg, rgba(2,0,36,1) 9%, rgba(9,9,121,1) 45%, rgb(17, 54, 202) 97%);
+    
+    }
+    
+    50%{
+        background: linear-gradient(90deg, rgba(2,0,36,1) 9%, rgba(9,9,121,1) 45%, rgb(17, 54, 202) 97%);
+    }
+    100%{
+        background: linear-gradient(0deg, rgba(2,0,36,1) 9%, rgba(9,9,121,1) 45%, rgb(17, 54, 202) 97%);
+    }
+ } 
+.music-container{
+    background-color:white;
+    border-radius: 25px;
+    box-shadow: 0 20px 20px black;
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+}
+
+.img-container{
+    position: relative;
+    width: 110px;
+    height: 110px;
+}
+
+
+.img-container img{
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    animation: blinkk 2s  infinite;
+
+    animation-play-state: paused;
+}
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+@keyframes blinkk {
+    
+    0%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 64%;
+    }
+    
+    100%{
+        opacity: 100%;
+    }
+    
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn{
+    background-color: white;
+    border: 0;
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.action-btn-big{
+    color: black;
+    font-size: 30px;
+}
+
+.action-btn:focus{
+    outline: 0;
+}
+
+
+.music-info{
+    /* margin-right: 200px; */
+    background-color: green;
+    justify-content: center;
+    font-size: 25px;
+    border-radius: 15px 15px 15px 15px;
+    position: absolute;
+    top: 0;
+    left: 55px;
+    /* width:calc(100%-20px); */
+    width: 100%;
+    background-color: transparent;
+    opacity: 0;
+    transform:  translateY(0%);
+    padding: 0 100px 5px 0;
+    transform: transform 0.3s ease-in,opacity 0.3s;
+}
+.music-info h4{
+    text-align: center;
+    padding: 0 40px 0 10px;
+    margin: 20px;
+}
+.music-container.play .music-info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-container{
+    background: rgb(3, 13, 148);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height:6px;
+    width: 100%;
+}
+
+
+.progress{
+    background-color:rgb(186, 193, 226);
+    border-radius: 5px;
+    height: 100%;
+    width:0%;
+    transition: width 0.1s linear;
+    
+}
+#credits{
+    font-size: 12px;
+    margin-top: 200px;
+    margin-left: 80%;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
